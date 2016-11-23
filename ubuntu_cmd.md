@@ -7,6 +7,12 @@
 有时会报错,说缺少dependent文件,这时需要运行
 `dpkg -f`
 
+## 创建Desktop lanucher
+`Alt+F2`打开程序执行窗口,或者直接在terminal里面输入
+```bash
+gnome-desktop-item-edit --create-new ~/Desktop
+```
+然后在窗口里输入command和icon即可.
 
 ## 查找文件
 ###1. 在一定路径下查找匹配特定字符的文件
