@@ -74,6 +74,31 @@ The Linux Command Line 中文版.epub
 ```
 `grep`默认大小写敏感,让其不敏感只要加 `-i`选项即可.
 
+### 4. 得到文件大小
+`du -sh` is a good place to start. The options are (from man du):
+```bash
+   -s, --summarize
+          display only a total for each argument
+
+   -h, --human-readable
+          print sizes in human readable format (e.g., 1K 234M 2G)
+```
+
+To check more than one directory and see the total, use du -sch:
+```bash
+   -c, --total
+          produce a grand total
+```
+
+### 5. How to redirect output to a file and stdout
+The command you want is named `tee`:
+```bash
+foo | tee output.file
+```
+For example:
+```bash
+ls -a | tee output.file
+```
 ## 进程管理
 1. 查询和关闭进程
 find processes containing 'wine' and kill them
@@ -82,7 +107,9 @@ kill $(ps aux | grep 'wine' | awk '{print $2}')
 ```
 bash 先执行$()内的命令, `awk '{print $2}'`得到第二列,即process id, pid,然后用kill关掉
 
-
+## mount windows
+在Ubuntu系统里加载windows系统
+`sudo mount -o ro /dev/sda4 /media/changjie/Windows `
 
 ~~~mermaid
 graph LR;

@@ -110,7 +110,7 @@ Switched to branch 'master'
 ```
 
 ###合并分支
-现在，我们把dev分支的工作成果合并到master分支上：
+现在，我们把dev分支的工作成果合并到master分支上(合并分支之前一定要回到主分支，否则合并无效!)：
 ```language
 $ git merge dev
 ```
