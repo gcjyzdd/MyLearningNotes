@@ -40,4 +40,10 @@ If you want it to be a list (as btk pointed out):
 list(reversed(range(10)))
 ```
 
+# Split a string by space
+The `str.split()` method without an argument splits on whitespace:
+```python
+>>> "many   fancy word \nhello    \thi".split()
+['many', 'fancy', 'word', 'hello', 'hi']
+```
 
