@@ -115,3 +115,23 @@ Switched to branch 'master'
 $ git merge dev
 ```
 
+### merge master into local branch
+Q: I have a local branch of a project ("configUpdate") that I've forked from somebody else's project and I've done a load of changes on it and would like to merge the changes they've made in to my local branch.
+
+A: How about (assuming you're currently on branch configUpdate):
+```git
+git fetch
+git rebase origin/master
+```
+In a nutshell:
+
+* `git merge branchname` takes new commits from the branch branchname, and adds them to the current branch. If necessary, it automatically adds a "Merge" commit on top.
+* `git rebase branchname` takes new commits from the branch branchname, and inserts them "under" your changes. More precisely, it modifies the history of the current branch such that it is based on the tip of branchname, with any changes you made on top of that.
+* `git pull` is basically the same as git fetch; git merge origin/master.
+* `git pull` --rebase is basically the same as git fetch; git rebase origin/master.
+So why would you want to use git pull --rebase rather than git pull? Here's a simple example:
+
+You start working on a new feature.
+* By the time you're ready to push your changes, several commits have been pushed by other developers.
+* If you `git pull` (which uses merge), your changes will be buried by the new commits, in addition to an automatically-created merge commit.
+* If you `git pull --rebase` instead, git will fast forward your master to upstream's, then apply your changes on top.

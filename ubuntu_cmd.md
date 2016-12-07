@@ -233,8 +233,9 @@ pdfcrop.sh -hires orig.pdf cropped.pdf
 #trimming pages
 pdfcrop.sh -t "10 20 30 40" orig.pdf trimmed.pdf
 ```
-
-
+## Turn off montor
+To turn off the monitor `$ xset dpms force off`
+To turn on the monitor `$ xset dpms force on`
 
 
 
